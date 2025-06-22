@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cylaba - Uniformes Escolares y Bordados Personalizados</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #FF69B4;
+            --soft-pink: #FFB6C1;
+            --light-blue: #87CEEB;
+            --mint-green: #98FB98;
+            --dark-green: #20B2AA;
+            --warm-gray: #F5F5F5;
+            --text-dark: #2C3E50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #fff 0%, var(--warm-gray) 100%);
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--soft-pink) 0%, var(--light-blue) 50%, var(--mint-green) 100%);
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 2rem;
+            background: linear-gradient(45deg, var(--primary-pink), var(--light-blue), var(--dark-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-dark) !important;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-pink) !important;
+            transform: translateY(-2px);
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(255,182,193,0.3) 0%, rgba(152,251,152,0.3) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23FFB6C1" stroke-width="0.5" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary-pink), var(--dark-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .btn-custom {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary-custom {
+            background: linear-gradient(45deg, var(--primary-pink), var(--light-blue));
+            color: white;
+        }
+
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255,105,180,0.4);
+            color: white;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+        }
+
+        .card-custom {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .icon-pink { background: linear-gradient(45deg, var(--primary-pink), var(--soft-pink)); }
+        .icon-blue { background: linear-gradient(45deg, var(--light-blue), #4682B4); }
+        .icon-green { background: linear-gradient(45deg, var(--mint-green), var(--dark-green)); }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--soft-pink), var(--light-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .price-tag {
+            background: linear-gradient(45deg, var(--primary-pink), var(--light-blue));
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .contact-form {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-control {
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-pink);
+            box-shadow: 0 0 0 0.2rem rgba(255,105,180,0.25);
+        }
+
+        .footer {
+            background: linear-gradient(135deg, var(--text-dark) 0%, #34495e 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .admin-panel {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+
+        .admin-card {
+            background: linear-gradient(135deg, var(--soft-pink), var(--light-blue));
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            color: white;
+        }
+
+        .stats-card {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1rem 0;
+            color: white;
+            background: linear-gradient(45deg, var(--primary-pink), var(--dark-green));
+        }
+
+        .login-form {
+            max-width: 400px;
+            margin: 5rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .hidden { display: none !important; }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            .section-title { font-size: 2rem; }
+            .navbar-brand { font-size: 1.5rem; }
+        }
+
+        .floating-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .floating-icon {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating-icon:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .floating-icon:nth-child(2) { top: 60%; left: 80%; animation-delay: 2s; }
+        .floating-icon:nth-child(3) { top: 40%; left: 70%; animation-delay: 4s; }
+        .floating-icon:nth-child(4) { top: 80%; left: 20%; animation-delay: 1s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-cut me-2"></i>Cylaba
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#catalog">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showLogin()">Admin</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="floating-icons">
+            <i class="fas fa-cut floating-icon" style="font-size: 3rem; color: var(--primary-pink);"></i>
+            <i class="fas fa-tshirt floating-icon" style="font-size: 2.5rem; color: var(--light-blue);"></i>
+            <i class="fas fa-graduation-cap floating-icon" style="font-size: 2rem; color: var(--dark-green);"></i>
+            <i class="fas fa-palette floating-icon" style="font-size: 2.5rem; color: var(--primary-pink);"></i>
+        </div>
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">Cylaba</h1>
+                    <p class="hero-subtitle">
+                        Creamos uniformes escolares únicos y bordados personalizados con amor y dedicación. 
+                        Tu estilo, nuestra pasión.
+                    </p>
+                    <a href="#services" class="btn btn-primary-custom btn-custom me-3">
+                        <i class="fas fa-star me-2"></i>Nuestros Servicios
+                    </a>
+                    <a href="#contact" class="btn btn-outline-dark btn-custom">
+                        <i class="fas fa-phone me-2"></i>Contactanos
+                    </a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="hero-image">
+                        <i class="fas fa-tshirt" style="font-size: 15rem; color: var(--light-blue); opacity: 0.3;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title">¿Quiénes Somos?</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card-custom p-4">
+                        <p class="lead text-center mb-4">
+                            Somos una empresa familiar dedicada a crear uniformes escolares de calidad superior 
+                            y ofrecer servicios de bordado personalizado que reflejen la identidad única de cada institución.
+                        </p>
+                        <div class="row">
+                            <div class="col-md-4 text-center mb-3">
+                                <div class="service-icon icon-pink">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <h5>Pasión</h5>
+                                <p>Cada prenda es confeccionada con amor y dedicación especial.</p>
+                            </div>
+                            <div class="col-md-4 text-center mb-3">
+                                <div class="service-icon icon-blue">
+                                    <i class="fas fa-gem"></i>
+                                </div>
+                                <h5>Calidad</h5>
+                                <p>Utilizamos los mejores materiales y técnicas de confección.</p>
+                            </div>
+                            <div class="col-md-4 text-center mb-3">
+                                <div class="service-icon icon-green">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <h5>Cercanía</h5>
+                                <p>Acompañamos a las familias en cada etapa educativa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5" style="background: var(--warm-gray);">
+        <div class="container">
+            <h2 class="section-title">Nuestros Productos y Servicios</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card-custom h-100 p-4 text-center">
+                        <div class="service-icon icon-pink">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Uniformes Escolares</h4>
+                        <p>Confeccionamos uniformes para todas las escuelas y niveles educativos. Desde jardín hasta secundaria, tenemos la experiencia y los modelos que necesitas.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Nivel inicial</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Primaria</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Secundaria</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Uniformes deportivos</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card-custom h-100 p-4 text-center">
+                        <div class="service-icon icon-blue">
+                            <i class="fas fa-cut"></i>
+                        </div>
+                        <h4>Bordados Personalizados</h4>
+                        <p>Agregamos el toque especial a tus prendas con bordados únicos. Logos, nombres, diseños especiales y mucho más.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Logos institucionales</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Nombres personalizados</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Diseños especiales</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Escudos y emblemas</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card-custom h-100 p-4 text-center">
+                        <div class="service-icon icon-green">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h4>Sublimación</h4>
+                        <p>Técnica moderna de impresión que garantiza colores vibrantes y duraderos en cualquier tipo de tela.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Diseños a full color</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Impresión fotográfica</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Resistente al lavado</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Colores vibrantes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section id="catalog" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Catálogo de Productos</h2>
+            <div class="row" id="catalog-items">
+                <!-- Los productos se cargarán dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5" style="background: var(--warm-gray);">
+        <div class="container">
+            <h2 class="section-title">Contacto y Pedidos</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-form">
+                        <form id="contact-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Nombre completo *</label>
+                                    <input type="text" class="form-control" name="nombre" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Teléfono *</label>
+                                    <input type="tel" class="form-control" name="telefono" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="email">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Escuela</label>
+                                    <input type="text" class="form-control" name="escuela">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Producto/Servicio *</label>
+                                    <select class="form-control" name="servicio" required>
+                                        <option value="">Selecciona...</option>
+                                        <option value="uniforme-jardin">Uniforme Jardín</option>
+                                        <option value="uniforme-primaria">Uniforme Primaria</option>
+                                        <option value="uniforme-secundaria">Uniforme Secundaria</option>
+                                        <option value="uniforme-deportivo">Uniforme Deportivo</option>
+                                        <option value="bordado">Bordado Personalizado</option>
+                                        <option value="sublimacion">Sublimación</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Talla (si aplica)</label>
+                                    <input type="text" class="form-control" name="talla" placeholder="Ej: 6, 8, 10...">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Mensaje adicional</label>
+                                <textarea class="form-control" name="mensaje" rows="4" placeholder="Cuéntanos más detalles sobre tu pedido..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary-custom btn-custom w-100">
+                                <i class="fas fa-paper-plane me-2"></i>Enviar Pedido
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Cylaba</h5>
+                    <p>Tu especialista en uniformes escolares y bordados personalizados</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-whatsapp fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; 2025 Cylaba. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="hidden">
+        <div class="login-form">
+            <h3 class="text-center mb-4">Acceso Administrativo</h3>
+            <form id="login-form">
+                <div class="mb-3">
+                    <label class="form-label">Usuario</label>
+                    <input type="text" class="form-control" id="username" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary-custom btn-custom w-100">
+                    <i class="fas fa-sign-in-alt me-2"></i>Ingresar
+                </button>
+                <button type="button" class="btn btn-outline-secondary w-100 mt-2" onclick="hideLogin()">
+                    Cancelar
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="admin-panel" class="hidden">
+        <div class="container">
+            <div class="admin-panel">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2>Panel de Administración</h2>
+                    <button class="btn btn-outline-danger" onclick="logout()">
+                        <i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión
+                    </button>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="stats-card">
+                            <h3 id="total-orders">0</h3>
+                            <p>Pedidos Totales</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stats-card">
+                            <h3 id="total-products">6</h3>
+                            <p>Productos</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stats-card">
+                            <h3 id="total-schools">12</h3>
+                            <p>Escuelas</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stats-card">
+                            <h3>100%</h3>
+                            <p>Satisfacción</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Tabs -->
+                <div class="mt-4">
+                    <ul class="nav nav-tabs" id="adminTabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#orders-tab">Pedidos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#products-tab">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#schools-tab">Escuelas</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content mt-3">
+                        <!-- Orders Tab -->
+                        <div class="tab-pane fade show active" id="orders-tab">
+                            <div class="admin-card">
+                                <h4>Pedidos Recibidos</h4>
+                                <div id="orders-list"></div>
+                            </div>
+                        </div>
+
+                        <!-- Products Tab -->
+                        <div class="tab-pane fade" id="products-tab">
+                            <div class="admin-card">
+                                <h4>Gestión de Productos</h4>
+                                <button class="btn btn-success mb-3" onclick="addProduct()">
+                                    <i class="fas fa-plus me-2"></i>Agregar Producto
+                                </button>
+                                <div id="products-list"></div>
+                            </div>
+                        </div>
+
+                        <!-- Schools Tab -->
+                        <div class="tab-pane fade" id="schools-tab">
+                            <div class="admin-card">
+                                <h4>Escuelas Registradas</h4>
+                                <button class="btn btn-success mb-3" onclick="addSchool()">
+                                    <i class="fas fa-plus me-2"></i>Agregar Escuela
+                                </button>
+                                <div id="schools-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Global variables
+        let currentView = 'public';
+        let orders = [];
+        let products = [
+            { id: 1, name: 'Uniforme Jardín Completo', price: 12500, category: 'uniforme-jardin', stock: 25, image: 'fas fa-baby' },
+            { id: 2, name: 'Uniforme Primaria Completo', price: 15000, category: 'uniforme-primaria', stock: 30, image: 'fas fa-graduation-cap' },
+            { id: 3, name: 'Uniforme Secundaria Completo', price: 18000, category: 'uniforme-secundaria', stock: 20, image: 'fas fa-user-graduate' },
+            { id: 4, name: 'Uniforme Deportivo', price: 8500, category: 'uniforme-deportivo', stock: 40, image: 'fas fa-running' },
+            { id: 5, name: 'Bordado Personalizado', price: 2500, category: 'bordado', stock: 100, image: 'fas fa-cut' },
+            { id: 6, name: 'Sublimación Personalizada', price: 3500, category: 'sublimacion', stock: 50, image: 'fas fa-palette' }
+        ];
+        let schools = [
+            'Escuela San Martín', 'Colegio Nacional', 'Instituto Santa María', 'Escuela Técnica',
+            'Jardín Pequeños Genios', 'Colegio Bilingüe', 'Escuela Rural', 'Instituto Comercial',
+            'Jardín Arco Iris', 'Colegio Católico', 'Escuela de Arte', 'Instituto Tecnológico'
+        ];
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCatalog();
+            loadData();
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            // Contact form
+            document.getElementById('contact-form').addEventListener('submit', handleContactForm);
+            
+            // Login form
+            document.getElementById('login-form').addEventListener('submit', handleLogin);
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Load catalog products
+        function loadCatalog() {
+            const catalogContainer = document.getElementById('catalog-items');
+            catalogContainer.innerHTML = '';
+
+            products.forEach(product => {
+                const productCard = `
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <i class="${product.image}"></i>
+                            </div>
+                            <div class="p-3">
+                                <h5>${product.name}</h5>
+                                <p class="text-muted">Stock disponible: ${product.stock} unidades</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price-tag">${product.price.toLocaleString()}</span>
+                                    <small class="text-success">
+                                        <i class="fas fa-check-circle me-1"></i>Disponible
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                catalogContainer.innerHTML += productCard;
+            });
+        }
+
+        // Handle contact form submission
+        function handleContactForm(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const order = {
+                id: Date.now(),
+                date: new Date().toLocaleDateString(),
+                nombre: formData.get('nombre'),
+                telefono: formData.get('telefono'),
+                email: formData.get('email'),
+                escuela: formData.get('escuela'),
+                servicio: formData.get('servicio'),
+                talla: formData.get('talla'),
+                mensaje: formData.get('mensaje'),
+                status: 'Nuevo'
+            };
+
+            orders.push(order);
+            saveData();
+            
+            // Show success message
+            alert('¡Pedido enviado correctamente! Te contactaremos pronto.');
+            e.target.reset();
+            
+            // Update admin stats if logged in
+            if (currentView === 'admin') {
+                updateAdminStats();
+            }
+        }
+
+        // Login functionality
+        function showLogin() {
+            document.body.style.overflow = 'hidden';
+            document.getElementById('login-modal').classList.remove('hidden');
+            document.getElementById('login-modal').style.position = 'fixed';
+            document.getElementById('login-modal').style.top = '0';
+            document.getElementById('login-modal').style.left = '0';
+            document.getElementById('login-modal').style.width = '100%';
+            document.getElementById('login-modal').style.height = '100%';
+            document.getElementById('login-modal').style.background = 'rgba(0,0,0,0.8)';
+            document.getElementById('login-modal').style.display = 'flex';
+            document.getElementById('login-modal').style.alignItems = 'center';
+            document.getElementById('login-modal').style.justifyContent = 'center';
+            document.getElementById('login-modal').style.zIndex = '9999';
+        }
+
+        function hideLogin() {
+            document.body.style.overflow = 'auto';
+            document.getElementById('login-modal').classList.add('hidden');
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Simple authentication (in a real app, this would be more secure)
+            if (username === 'admin' && password === 'cylaba2025') {
+                currentView = 'admin';
+                hideLogin();
+                showAdminPanel();
+                document.getElementById('login-form').reset();
+            } else {
+                alert('Usuario o contraseña incorrectos');
+            }
+        }
+
+        function showAdminPanel() {
+            // Hide public sections
+            document.querySelectorAll('section, footer').forEach(el => {
+                el.style.display = 'none';
+            });
+            document.querySelector('nav').style.display = 'none';
+            
+            // Show admin panel
+            document.getElementById('admin-panel').classList.remove('hidden');
+            document.getElementById('admin-panel').style.display = 'block';
+            
+            // Load admin data
+            loadAdminData();
+        }
+
+        function logout() {
+            currentView = 'public';
+            
+            // Show public sections
+            document.querySelectorAll('section, footer').forEach(el => {
+                el.style.display = 'block';
+            });
+            document.querySelector('nav').style.display = 'block';
+            
+            // Hide admin panel
+            document.getElementById('admin-panel').classList.add('hidden');
+            document.getElementById('admin-panel').style.display = 'none';
+        }
+
+        function loadAdminData() {
+            updateAdminStats();
+            loadOrdersList();
+            loadProductsList();
+            loadSchoolsList();
+        }
+
+        function updateAdminStats() {
+            document.getElementById('total-orders').textContent = orders.length;
+            document.getElementById('total-products').textContent = products.length;
+            document.getElementById('total-schools').textContent = schools.length;
+        }
+
+        function loadOrdersList() {
+            const ordersList = document.getElementById('orders-list');
+            ordersList.innerHTML = '';
+
+            if (orders.length === 0) {
+                ordersList.innerHTML = '<p class="text-muted">No hay pedidos registrados</p>';
+                return;
+            }
+
+            orders.forEach(order => {
+                const orderCard = `
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h6><i class="fas fa-user me-2"></i>${order.nombre}</h6>
+                                    <p class="mb-1"><i class="fas fa-phone me-2"></i>${order.telefono}</p>
+                                    <p class="mb-1"><i class="fas fa-school me-2"></i>${order.escuela || 'No especificada'}</p>
+                                    <p class="mb-1"><i class="fas fa-tag me-2"></i>${order.servicio}</p>
+                                    ${order.talla ? `<p class="mb-1"><i class="fas fa-ruler me-2"></i>Talla: ${order.talla}</p>` : ''}
+                                    ${order.mensaje ? `<p class="mb-1"><i class="fas fa-comment me-2"></i>${order.mensaje}</p>` : ''}
+                                </div>
+                                <div class="col-md-4 text-end">
+                                    <small class="text-muted">${order.date}</small>
+                                    <br>
+                                    <span class="badge bg-primary">${order.status}</span>
+                                    <br>
+                                    <button class="btn btn-sm btn-outline-danger mt-2" onclick="deleteOrder(${order.id})">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                ordersList.innerHTML += orderCard;
+            });
+        }
+
+        function loadProductsList() {
+            const productsList = document.getElementById('products-list');
+            productsList.innerHTML = '';
+
+            products.forEach(product => {
+                const productCard = `
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <h6><i class="${product.image} me-2"></i>${product.name}</h6>
+                                    <p class="mb-1">Precio: ${product.price.toLocaleString()}</p>
+                                    <p class="mb-1">Stock: ${product.stock} unidades</p>
+                                </div>
+                                <div class="col-md-6 text-end">
+                                    <button class="btn btn-sm btn-outline-primary me-2" onclick="editProduct(${product.id})">
+                                        <i class="fas fa-edit"></i> Editar
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger" onclick="deleteProduct(${product.id})">
+                                        <i class="fas fa-trash"></i> Eliminar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                productsList.innerHTML += productCard;
+            });
+        }
+
+        function loadSchoolsList() {
+            const schoolsList = document.getElementById('schools-list');
+            schoolsList.innerHTML = '';
+
+            schools.forEach((school, index) => {
+                const schoolCard = `
+                    <div class="card mb-2">
+                        <div class="card-body d-flex justify-content-between align-items-center">
+                            <span><i class="fas fa-school me-2"></i>${school}</span>
+                            <button class="btn btn-sm btn-outline-danger" onclick="deleteSchool(${index})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                schoolsList.innerHTML += schoolCard;
+            });
+        }
+
+        // Admin functions
+        function deleteOrder(orderId) {
+            if (confirm('¿Estás seguro de eliminar este pedido?')) {
+                orders = orders.filter(order => order.id !== orderId);
+                saveData();
+                loadOrdersList();
+                updateAdminStats();
+            }
+        }
+
+        function addProduct() {
+            const name = prompt('Nombre del producto:');
+            const price = prompt('Precio:');
+            const stock = prompt('Stock:');
+            const category = prompt('Categoría:');
+            
+            if (name && price && stock && category) {
+                const newProduct = {
+                    id: Date.now(),
+                    name: name,
+                    price: parseInt(price),
+                    stock: parseInt(stock),
+                    category: category,
+                    image: 'fas fa-tshirt'
+                };
+                
+                products.push(newProduct);
+                saveData();
+                loadProductsList();
+                loadCatalog();
+                updateAdminStats();
+            }
+        }
+
+        function editProduct(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const name = prompt('Nombre del producto:', product.name);
+            const price = prompt('Precio:', product.price);
+            const stock = prompt('Stock:', product.stock);
+            
+            if (name && price && stock) {
+                product.name = name;
+                product.price = parseInt(price);
+                product.stock = parseInt(stock);
+                
+                saveData();
+                loadProductsList();
+                loadCatalog();
+            }
+        }
+
+        function deleteProduct(productId) {
+            if (confirm('¿Estás seguro de eliminar este producto?')) {
+                products = products.filter(product => product.id !== productId);
+                saveData();
+                loadProductsList();
+                loadCatalog();
+                updateAdminStats();
+            }
+        }
+
+        function addSchool() {
+            const school = prompt('Nombre de la escuela:');
+            if (school) {
+                schools.push(school);
+                saveData();
+                loadSchoolsList();
+                updateAdminStats();
+            }
+        }
+
+        function deleteSchool(index) {
+            if (confirm('¿Estás seguro de eliminar esta escuela?')) {
+                schools.splice(index, 1);
+                saveData();
+                loadSchoolsList();
+                updateAdminStats();
+            }
+        }
+
+        // Data persistence using variables (since localStorage is not available)
+        function saveData() {
+            // In a real application, this would save to a database
+            // For now, data persists only during the session
+            console.log('Datos guardados en memoria');
+        }
+
+        function loadData() {
+            // In a real application, this would load from a database
+            // For now, we use the initial data
+            console.log('Datos cargados desde memoria');
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
